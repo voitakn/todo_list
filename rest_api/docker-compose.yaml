@@ -1,0 +1,14 @@
+version: '3'
+
+volumes:
+  pg_tasks_volume:
+
+services:
+  pg-tasks:
+    image: postgres:15-alpine
+    env_file:
+      - .env
+    ports:
+      - "54321:5432"
+    volumes:
+      - pg_tasks_volume:/var/lib/postgresql/data
